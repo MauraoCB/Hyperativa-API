@@ -11,9 +11,10 @@ namespace Hyperativa_API.Repositories
     {
         public static Usuario GetUsuario(string login, string senha)
         {
-            var usuarios = new List<Usuario>();
-
-            usuarios.Add(new Usuario { Login = "userHyperativa", Senha = "Hyp3@tiva" });
+            var usuarios = new List<Usuario>
+            {
+                new Usuario { Login = "userHyperativa", Senha = "Hyp3r@tiva" }
+            };
 
             return usuarios.Where(u => u.Login == login && u.Senha == senha).FirstOrDefault();
         }

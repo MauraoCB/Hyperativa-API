@@ -24,7 +24,7 @@ namespace Hyperativa_API.Controllers
                 return NotFound(new { message = "Usuário ou senha inválidos" });
 
             // Gera o Token
-            var token = TokenService.GetToken(usarioLogado);
+            var tokenGerado = TokenService.GetToken(usarioLogado);
 
             // Oculta a senha para não retornar ao frontend
             usarioLogado.Senha = "";
@@ -33,7 +33,7 @@ namespace Hyperativa_API.Controllers
             return new
             {
                 user = usarioLogado,
-                token = token
+                token = tokenGerado
             };
         }
     }

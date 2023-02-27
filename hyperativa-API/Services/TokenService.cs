@@ -33,7 +33,7 @@ namespace Hyperativa_API.Services
             payload.AddClaims(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, usarioLogado.Login),
-                    new Claim(ClaimTypes.Role, "AllUsers")
+                    new Claim(ClaimTypes.Role, usarioLogado.Funcao)
                 });
                 
 

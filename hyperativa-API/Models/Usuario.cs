@@ -9,5 +9,6 @@ namespace Hyperativa_API.Models
     {
         public string Login { get; set; }
         public string Senha { get; set; }
+        public string Funcao { get; set; }
     }
 }
