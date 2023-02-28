@@ -89,15 +89,19 @@ namespace Hyperativa_API.Services
 
         public  void SalvarCartao(CartaoInfo cartao)
         {
+            if (cartao.DataInclusao == DateTime.MinValue)
+            {
+                cartao.DataInclusao = DateTime.Now;
+            }
+
             cartao.NumeroCartao = Cryptography.Encrypt(cartao.NumeroCartao);
             cartao.NomeTitular = Cryptography.Encrypt(cartao.NomeTitular);
-
+             
             _cartaoRepository.SalvarCartao(cartao);
         }
          
         private void SalvarLog()
-        {
-            
+        {            
             
         }
     }

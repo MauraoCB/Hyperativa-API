@@ -10,6 +10,7 @@ namespace Hyperativa_API.Infra
     public class CartaoContext : DbContext
     {
         public virtual DbSet<CartaoInfo> CartaoInfo { get; set; }
+        public virtual DbSet<LogApi> LogApi { get; set; }
 
         public CartaoContext()
         { }
