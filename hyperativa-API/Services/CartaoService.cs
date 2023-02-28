@@ -44,7 +44,7 @@ namespace Hyperativa_API.Services
 
                     for (int i = 1; i < linhasCartao.Length; i++)
                     {
-                        if (linhasCartao[i].Substring(0,1) == "C")
+                        if (linhasCartao[i].Substring(0, 1) == "C")
                         {
                             try
                             {
@@ -52,7 +52,7 @@ namespace Hyperativa_API.Services
                                 {
                                     DataInclusao = dataInclusao,
                                     NomeTitular = Cryptography.Encrypt(nomeTitular),
-                                    NumeroCartao = Cryptography.Encrypt(linhasCartao[i].Substring(7,19)),
+                                    NumeroCartao = Cryptography.Encrypt(linhasCartao[i].Substring(7, 19)),
                                     NumeroLote = numeroLote
                                 };
 
@@ -61,11 +61,11 @@ namespace Hyperativa_API.Services
                             }
                             catch (Exception)
                             {
-                                
+
                             }
                         }
                     }
-
+                    File.Move(lotePath + "DESAFIO-HYPERATIVA.txt", lotePath + "DESAFIO-HYPERATIVA." + DateTime.Now.ToString("yyyyMMddHHmmss"));
                 }
 
                 return $"{totalProcessados} registros processados de um total de {quantidadeRegistros}";
