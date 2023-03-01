@@ -13,7 +13,7 @@ namespace Hyperativa_API.Repositories
         {
             var usuarios = new List<Usuario>
             {
-                new Usuario { Login = "userHyperativa", Senha = "Hyp3r@tiva" }
+                new Usuario { Login = "userHyperativa", Senha = "Hyp3r@tiva", Funcao = "Usuario" }
             };
 
             return usuarios.Where(u => u.Login == login && u.Senha == senha).FirstOrDefault();

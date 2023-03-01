@@ -23,7 +23,7 @@ namespace Hyperativa_API.Controllers
 
         [HttpPut]
         [Route("SalvarCartao")]
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public IActionResult SalvarCartao([FromBody] CartaoInfo cartao)
         {
             try
@@ -69,7 +69,7 @@ namespace Hyperativa_API.Controllers
 
         [HttpPost]
         [Route("CarregarLoteCartao")]
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public async Task<IActionResult> CarregarLoteCartao()
         {
             try
@@ -97,9 +97,9 @@ namespace Hyperativa_API.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpGet]
         [Route("GetCartao/{numeroCartao}")]
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public async Task<ActionResult<CartaoInfo>> GetCartao(string numeroCartao)
         {
             try
